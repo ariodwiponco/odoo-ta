@@ -1,7 +1,7 @@
 <odoo>
     <data>
-        <record id="sales_module.list_view" model="ir.ui.view">
-            <field name="name">Sales Model List View</field>
+        <record id="sales_module.sales_list_view" model="ir.ui.view">
+            <field name="name">Sales List View</field>
             <field name="model">sales</field>
             <field name="arch" type="xml">
                 <tree>
@@ -11,8 +11,8 @@
             </field>
         </record>
 
-        <record id="sales_module.sales_model_form_view" model="ir.ui.view">
-            <field name="name">Sales Model Form View</field>
+        <record id="sales_module.sales_form_view" model="ir.ui.view">
+            <field name="name">Sales Form View</field>
             <field name="model">sales</field>
             <field name="arch" type="xml">
                 <form string="Sales Form">

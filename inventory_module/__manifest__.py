@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Sales",
+    'name': "Inventory",
 
     'summary': """
-        Basic sales module for UMKM ERP""",
+        Basic inventory module for UMKM ERP""",
 
     'description': """
-        This module will be a major module that will hold sales that can afford to record sales
+        This module will be a major module that will become master data for supporting sales module
     """,
 
     'author': "Ario Dwiponco",
@@ -22,6 +22,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/sales_views.xml',
+        'views/product_views.xml',
     ],
 }

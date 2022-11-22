@@ -2,7 +2,7 @@
     <data>
         <!-- actions opening views on models -->
         <record model="ir.actions.act_window" id="sales_module.sales_action_window">
-            <field name="name">Sales Window</field>
+            <field name="name">Sales</field>
             <field name="res_model">sales</field>
             <field name="view_mode">tree,form</field>
         </record>

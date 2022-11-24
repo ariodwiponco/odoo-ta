@@ -9,7 +9,7 @@ class Sales(models.Model):
     name = fields.Char()
     sales_date = fields.Datetime(string='Sales Date')
     line_ids = fields.One2many('sales.line', 'sales_id', string='Sales Lines')
-
+    business_id = fields.Many2one('business', string='Business')
 
 class SalesLine(models.Model):
     _name = 'sales.line'

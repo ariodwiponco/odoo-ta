@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="sales_module.sales_action_window">
+            <field name="name">Sales</field>
+            <field name="res_model">sales</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <record model="ir.actions.server" id="sales_module.sales_action_server">
+            <field name="name">Sales Server Action</field>
+            <field name="model_id" ref="model_sales"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
+        </record>
+
+        <!-- Top menu item -->
+        <menuitem name="Sales" id="sales_module.menu_root" groups="base.group_user" sequence="1"/>
+
+        <!-- menu categories -->
+        <menuitem name="Overview" id="sales_module.menu_sales" parent="sales_module.menu_root"/>
+
+        <!-- actions -->
+        <menuitem name="Sales List" id="sales_module.sales_list" parent="sales_module.menu_sales"
+                  action="sales_module.sales_action_window"/>
+    </data>
+</odoo>

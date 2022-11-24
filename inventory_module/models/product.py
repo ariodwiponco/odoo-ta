@@ -10,4 +10,4 @@ class Product(models.Model):
     cost_type = fields.Selection([('single', 'Single Cost'), ('material', 'Material Cost')], string='Product Cost Type',
                                  default='material')
     material_ids = fields.One2many('material', 'product_id', string='Materials')
-    business_id = fields.Many2one('business', string='Business')
+    business_id = fields.Many2one('business', string='Business', required=True)

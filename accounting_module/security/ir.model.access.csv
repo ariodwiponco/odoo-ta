@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_account_payable_model,accounting_module.account_payable,model_account_payable,base.group_user,1,1,1,1
-access_account_receivable_model,accounting_module.account_receivable,model_account_receivable,base.group_user,1,1,1,1
-access_account_journal_model,accounting_module.account_journal,model_account_journal,base.group_user,1,1,1,1
-access_business_model,accounting_module.business,model_business,base.group_user,1,0,0,0
-access_business_model,accounting_module.business,model_business,base.group_system,1,1,1,1
+access_chart_account_model,"Full Access Chart of Account",model_account_payable,base.group_user,1,1,1,1
+access_account_journal_model,"Full Access Account Journal",model_account_journal,base.group_user,1,1,1,1
+access_business_model,"Business User",model_business,base.group_user,1,0,0,0
+access_business_model,"Business Admin",model_business,base.group_system,1,1,1,1

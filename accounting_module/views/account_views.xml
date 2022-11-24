@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="accounting_module.account_journal_list_view" model="ir.ui.view">
+            <field name="name">Account Journal List View</field>
+            <field name="model">account.journal</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="business_id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="accounting_module.account_journal_list_view" model="ir.ui.view">
+            <field name="name">Account Journal Form View</field>
+            <field name="model">account.journal</field>
+            <field name="arch" type="xml">
+                <form string="Account Journal Form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="business_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

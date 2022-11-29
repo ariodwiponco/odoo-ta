@@ -22,7 +22,7 @@
         </record>
 
         <!-- Top menu item -->
-        <menuitem name="Inventory" id="inventory_module.menu_root" groups="base.group_user" sequence="2"/>
+        <menuitem name="Inventory" id="inventory_module.menu_root" groups="base.group_user" sequence="3"/>
 
         <!-- menu categories -->
         <menuitem name="Overview" id="inventory_module.menu_product" parent="inventory_module.menu_root"/>

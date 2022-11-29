@@ -1,16 +1,35 @@
 <odoo>
     <data>
         <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="sales_module.sales_action_window">
-            <field name="name">Sales</field>
-            <field name="res_model">sales</field>
+        <record model="ir.actions.act_window" id="accounting_module.accounting_action_window">
+            <field name="name">Accounting</field>
+            <field name="res_model">account.journal</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- server action to the one above -->
-        <record model="ir.actions.server" id="sales_module.sales_action_server">
-            <field name="name">Sales Server Action</field>
-            <field name="model_id" ref="model_sales"/>
+        <record model="ir.actions.act_window" id="accounting_module.business_action_window">
+            <field name="name">Business</field>
+            <field name="res_model">business</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to accounting model -->
+        <record model="ir.actions.server" id="accounting_module.accounting_action_server">
+            <field name="name">Accounting Server Action</field>
+            <field name="model_id" ref="model_account_journal"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+                }
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="accounting_module.business_action_server">
+            <field name="name">Business Server Action</field>
+            <field name="model_id" ref="model_business"/>
             <field name="state">code</field>
             <field name="code">
                 action = {
@@ -22,13 +41,19 @@
         </record>
 
         <!-- Top menu item -->
-        <menuitem name="Sales" id="sales_module.menu_root" groups="base.group_user" sequence="1"/>
+        <menuitem name="Accounting" id="accounting_module.menu_root" groups="base.group_user" sequence="1"/>
 
         <!-- menu categories -->
-        <menuitem name="Overview" id="sales_module.menu_sales" parent="sales_module.menu_root"/>
+        <menuitem name="Overview" id="accounting_module.menu_overview"
+                  parent="accounting_module.menu_root"/>
+        <menuitem name="Account" id="accounting_module.menu_accounting"
+                  parent="accounting_module.menu_root"/>
+        <menuitem name="Business" id="accounting_module.menu_business"
+                  parent="accounting_module.menu_root"
+                  action="accounting_module.business_action_server"/>
 
         <!-- actions -->
-        <menuitem name="Sales List" id="sales_module.sales_list" parent="sales_module.menu_sales"
-                  action="sales_module.sales_action_window"/>
+        <menuitem name="Account Journal" id="accounting_module.account_list" parent="accounting_module.menu_accounting"
+                  action="accounting_module.accounting_action_window"/>
     </data>
 </odoo>
